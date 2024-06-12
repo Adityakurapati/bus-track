@@ -12,7 +12,7 @@ const PassengerCountDisplay=() =>
                 {
                         try
                         {
-                                const response=await fetch( '/api/get-pcount' );
+                                const response=await fetch( '/pages/api/get-pcount' );
                                 const data=await response.json();
                                 setCount( data.count );
                         } catch ( error )

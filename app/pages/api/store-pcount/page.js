@@ -7,17 +7,6 @@ export default async function storeCount ( req, res )
 
         const { count }=req.searchParams;
 
-        // if ( req.method!=='GET' )
-        // {
-        //         res.setHeader( 'Allow', [ 'GET' ] );
-        //         return res.status( 405 ).end( `Method ${ req.method } Not Allowed` );
-        // }
-
-        // if ( !count )
-        // {
-        //         return res.status( 400 ).json( { message: 'Count is required' } );
-        // }
-
         await connectToDatabase();
 
         const passengerCount=new PassengerCount( { count: Number( count ) } ); // Ensure count is a number
